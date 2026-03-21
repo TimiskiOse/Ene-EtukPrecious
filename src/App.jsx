@@ -1,23 +1,74 @@
 import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { HiMenu, HiX } from "react-icons/hi";
+import { useState } from "react";
 import profileImage from "./assets/profilepics.jpeg";
 import { personalInfo, services, caseStudies, testimonials } from "./data";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#ecddd4] text-gray-800 font-sans">
+      {/* HEADER / NAV */}
       {/* HEADER / NAV */}
       <header className="p-6 bg-[#ecddd4] shadow-sm flex justify-between items-center sticky top-0 z-50">
         <h1 className="text-xl font-bold tracking-tighter">
           {personalInfo.name}
         </h1>
-        <a
-          href="#contact"
-          className="bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-6 items-center">
+          <a href="#services" className="hover:text-gray-600 transition">
+            Services
+          </a>
+          <a href="#work" className="hover:text-gray-600 transition">
+            Work
+          </a>
+          <a
+            href="#contact"
+            className="bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition"
+          >
+            Let's Talk
+          </a>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          Let's Talk
-        </a>
+          {menuOpen ? <HiX /> : <HiMenu />}
+        </button>
+
+        {/* Mobile Dropdown */}
+        {menuOpen && (
+          <div className="absolute top-20 left-0 w-full bg-[#ecddd4] shadow-md flex flex-col items-center gap-6 py-6 md:hidden">
+            <a
+              href="#services"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-gray-600"
+            >
+              Services
+            </a>
+
+            <a
+              href="#work"
+              onClick={() => setMenuOpen(false)}
+              className="hover:text-gray-600"
+            >
+              Work
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="bg-black text-white px-6 py-2 rounded-full"
+            >
+              Let's Talk
+            </a>
+          </div>
+        )}
       </header>
 
       {/* HERO SECTION */}
@@ -39,6 +90,13 @@ function App() {
 
         {/* RIGHT COLUMN: Headline, Summary, and Buttons */}
         <div className="md:w-7/12 text-center md:text-left">
+          <h2 className="text-4xl font-bold leading-tight">
+            Helping Brands Grow Through
+            <span className="text-blue-600">
+              {" "}
+              Strategic Social Media Management
+            </span>
+          </h2>
           <p className="text-xl text-gray-600 mb-10 leading-relaxed">
             {personalInfo.summary}
           </p>
@@ -67,12 +125,18 @@ function App() {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="p-8 border rounded-2xl bg-gray-50 hover:shadow-lg transition"
+                className="p-6 border rounded-2xl bg-gray-50 hover:shadow-lg transition"
               >
                 <h4 className="text-xl font-bold mb-3">{service.title}</h4>
                 <p className="text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
+                <div className="flex gap-4 mt-4">
+                  <FaInstagram className="text-2xl text-pink-500 mb-3" />
+                  <FaXTwitter className="text-2xl text-black mb-3" />
+                  <FaTiktok className="text-2xl text-black mb-3" />
+                  <FaLinkedin className="text-2xl text-blue-700 mb-3" />
+                </div>
               </div>
             ))}
           </div>
@@ -118,6 +182,31 @@ function App() {
         </div>
       </section>
 
+      {/* SOCIAL PROOF */}
+      <section className="px-6 py-20 bg-gray-50">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 className="text-3xl font-bold text-black">120K+</h3>
+            <p className="text-gray-600">Followers Grown</p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-black">250%</h3>
+            <p className="text-gray-600">Average Engagement</p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-black">10+</h3>
+            <p className="text-gray-600">Brands Managed</p>
+          </div>
+
+          <div>
+            <h3 className="text-3xl font-bold text-black">6+</h3>
+            <p className="text-gray-600">Years Experience</p>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="px-6 py-20 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -155,10 +244,14 @@ function App() {
       {/* CONTACT FORM */}
       <section id="contact" className="px-6 py-20 bg-[#ecddd4]">
         <div className="max-w-2xl mx-auto">
-          <h3 className="text-3xl font-bold mb-8 text-center">
+          <h3 className="text-2xl font-bold mb-8 text-center md:text-3xl">
             Let's Build Something Great
           </h3>
-          <form className="space-y-6">
+          <form
+            action="https://formspree.io/f/yourID"
+            method="POST"
+            className="space-y-6"
+          >
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Name
@@ -212,7 +305,7 @@ function App() {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/precious-ene-etuk-0597893a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
             target="_blank"
             className="bg-gray-900 p-4 rounded-full text-xl hover:bg-blue-600 hover:text-white hover:scale-110 transition duration-300"
           >
@@ -221,7 +314,7 @@ function App() {
 
           {/* X / Twitter */}
           <a
-            href="https://x.com"
+            href="https://x.com/preciouseneetuk?s=21"
             target="_blank"
             className="bg-gray-900 p-4 rounded-full text-xl hover:bg-gray-700 hover:text-white hover:scale-110 transition duration-300"
           >
@@ -230,7 +323,7 @@ function App() {
 
           {/* Instagram */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/precious_eneetuk?igsh=MTJ5YTFlM2ZjZjF4OA=="
             target="_blank"
             className="bg-gray-900 p-4 rounded-full text-xl hover:bg-pink-600 hover:text-white hover:scale-110 transition duration-300"
           >
@@ -239,7 +332,7 @@ function App() {
 
           {/* TikTok */}
           <a
-            href="https://tiktok.com"
+            href="https://www.tiktok.com/@preciouseneetuk?_r=1&_t=ZS-94sRQsdaa85"
             target="_blank"
             className="bg-gray-900 p-4 rounded-full text-xl hover:bg-white hover:text-black hover:scale-110 transition duration-300"
           >

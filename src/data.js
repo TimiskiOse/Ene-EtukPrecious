@@ -1,5 +1,5 @@
 export const personalInfo = {
-  name: "Ene-Etuk Precious Mercy",
+  name: "Precious Ene-Etuk",
   title: "Digital Creative & Social Media Manager",
   role: "Social Media Manager",
   email: "preciouseneetuk@gmail.com",
