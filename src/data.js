@@ -5,7 +5,7 @@ export const personalInfo = {
   email: "preciouseneetuk@gmail.com",
   phone: "+234 802 965 8311",
   summary:
-    "I am Precious Ene-Etuk, a Global Digital Creative and Social Media Manager dedicated to transforming brand identities through data-driven storytelling and high-impact visual design. With a background spanning UI/UX design and professional photography, I bridge the gap between aesthetic excellence and functional growth. I help lifestyle, tech, and leadership brands scale their digital presence through automated workflows and creative content strategies that turn followers into community members.",
+    "I am Precious Ene-Etuk, a Global Digital Creative dedicated to transforming brand identities through data-driven storytelling and high-impact visual design. With a background spanning UI/UX design and professional photography, I bridge the gap between aesthetic excellence and functional growth. I help lifestyle, tech, and leadership brands scale their digital presence through automated workflows and creative content strategies that turn followers into community members.",
   profileImage: "profileimage.jpg", // Placeholder for your profile image path
 };
 
@@ -67,9 +67,9 @@ export const testimonials = [
   },
   {
     id: 2,
-    quote: "Her ability to translate our data insights into creative social media calendars completely transformed our online presence.",
-    author: "David O.", 
-    role: "CEO, Adventure Concepts", 
+    quote: "Truly, you make my creative journey so easy. I have slept well the last 3 days, trusting that 'Precious will deliver'😇Well done!",
+    author: "Akpos Otubuere", 
+    role: "Chief Vision Officer, Da Waffi Genius Entertainment", 
     image: "https://via.placeholder.com/150x150" // Add client photo here
   }
 ];

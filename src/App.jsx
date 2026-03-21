@@ -2,8 +2,10 @@ import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
+import ContactForm from "./components/ContactForm";
 import { useState } from "react";
 import profileImage from "./assets/profilepics.jpeg";
+import icon from "./assets/icon.PNG";
 import { personalInfo, services, caseStudies, testimonials } from "./data";
 
 function App() {
@@ -11,11 +13,13 @@ function App() {
   return (
     <div className="min-h-screen bg-[#ecddd4] text-gray-800 font-sans">
       {/* HEADER / NAV */}
-      {/* HEADER / NAV */}
-      <header className="p-6 bg-[#ecddd4] shadow-sm flex justify-between items-center sticky top-0 z-50">
-        <h1 className="text-xl font-bold tracking-tighter">
-          {personalInfo.name}
-        </h1>
+      <header className="p-4 bg-[#ecddd4] shadow-sm flex justify-between items-center sticky top-0 z-50">
+        <div className="flex items-center gap-2">
+          <img src={icon} alt="Icon" className="h-14 w-14" />
+          <h1 className="text-xl font-bold tracking-tighter">
+            {personalInfo.name}
+          </h1>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 items-center">
@@ -89,8 +93,8 @@ function App() {
         </div>
 
         {/* RIGHT COLUMN: Headline, Summary, and Buttons */}
-        <div className="md:w-7/12 text-center md:text-left">
-          <h2 className="text-4xl font-bold leading-tight">
+        <div className="md:w-7/12 md:text-left">
+          <h2 className="text-2xl font-bold leading-tight md:text-4xl mb-6">
             Helping Brands Grow Through
             <span className="text-blue-600">
               {" "}
@@ -147,7 +151,7 @@ function App() {
       <section id="work" className="px-6 py-20 bg-[#785042]  text-white">
         <div className="max-w-5xl mx-auto">
           <h3 className="text-3xl font-bold mb-12 text-center">
-            Featured Projects
+            Work Experience
           </h3>
           <div className="space-y-12">
             {caseStudies.map((study) => (
@@ -183,10 +187,10 @@ function App() {
       </section>
 
       {/* SOCIAL PROOF */}
-      <section className="px-6 py-20 bg-gray-50">
+      <section className="px-6 py-10 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <h3 className="text-3xl font-bold text-black">120K+</h3>
+            <h3 className="text-3xl font-bold text-black">100K+</h3>
             <p className="text-gray-600">Followers Grown</p>
           </div>
 
@@ -208,7 +212,7 @@ function App() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="px-6 py-20 bg-white">
+      <section className="px-6 py-10 bg-white">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold mb-12 text-center">
             What Clients Say
@@ -243,53 +247,7 @@ function App() {
 
       {/* CONTACT FORM */}
       <section id="contact" className="px-6 py-20 bg-[#ecddd4]">
-        <div className="max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold mb-8 text-center md:text-3xl">
-            Let's Build Something Great
-          </h3>
-          <form
-            action="https://formspree.io/f/yourID"
-            method="POST"
-            className="space-y-6"
-          >
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                className="w-full border border-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="Your Name"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                className="w-full border border-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="you@company.com"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Message
-              </label>
-              <textarea
-                rows="4"
-                className="w-full border border-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-                placeholder="Tell me about your project..."
-              ></textarea>
-            </div>
-            <button
-              type="button"
-              className="w-full bg-black text-white p-4 rounded-lg font-bold hover:bg-gray-800 transition"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <ContactForm />
       </section>
 
       {/* FOOTER */}
