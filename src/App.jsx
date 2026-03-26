@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import ContactForm from "./components/ContactForm";
 import { useState } from "react";
-import profileImage from "./assets/profilepic.jpeg";
+import profileImage from "./assets/Profilepic.jpeg";
 import icon from "./assets/icon.PNG";
 import {
   personalInfo,
