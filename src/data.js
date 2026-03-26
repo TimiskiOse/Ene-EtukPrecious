@@ -1,7 +1,7 @@
 import mrAkpos from "./assets/mrApkos.jpeg";
 import drLavy1 from "./assets/drLavy1.jpeg";
 import work1 from "./assets/work1.jpeg";
-import work2 from "./assets/work2.jpeg";
+import work2 from "./assets/Work2.jpeg";
 import work3 from "./assets/work3.jpeg";
 import work4 from "./assets/work4.jpeg";
 
