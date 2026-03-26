@@ -1,5 +1,4 @@
 import mrAkpos from "./assets/mrApkos.jpeg";
-//import drLavy from "./assets/drLavy.jpeg";
 import drLavy1 from "./assets/drLavy1.jpeg";
 import work1 from "./assets/work1.jpeg";
 import work2 from "./assets/work2.jpeg";
