@@ -4,9 +4,15 @@ import { MdEmail } from "react-icons/md";
 import { HiMenu, HiX } from "react-icons/hi";
 import ContactForm from "./components/ContactForm";
 import { useState } from "react";
-import profileImage from "./assets/profilepics.jpeg";
+import profileImage from "./assets/profilepic.jpeg";
 import icon from "./assets/icon.PNG";
-import { personalInfo, services, caseStudies, testimonials } from "./data";
+import {
+  personalInfo,
+  services,
+  caseStudies,
+  testimonials,
+  portfolio,
+} from "./data";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +21,7 @@ function App() {
       {/* HEADER / NAV */}
       <header className="p-4 bg-[#ecddd4] shadow-sm flex justify-between items-center sticky top-0 z-50">
         <div className="flex items-center gap-2">
-          <img src={icon} alt="Icon" className="h-14 w-14" />
+          <img src={icon} alt="Icon" className="h-10 w-10" />
           <h1 className="text-xl font-bold tracking-tighter">
             {personalInfo.name}
           </h1>
@@ -76,7 +82,7 @@ function App() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="px-6 py-24 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+      <section className="px-6 py-20 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* LEFT COLUMN: Image, Name, and Role */}
         <div className="md:w-5/12 flex flex-col items-center md:items-start md:text-left">
           <img
@@ -96,7 +102,7 @@ function App() {
         <div className="md:w-7/12 md:text-left">
           <h2 className="text-2xl font-bold leading-tight md:text-4xl mb-6">
             Helping Brands Grow Through
-            <span className="text-blue-600">
+            <span className="text-blue-600 text-xl md:text-3xl">
               {" "}
               Strategic Social Media Management
             </span>
@@ -148,7 +154,7 @@ function App() {
       </section>
 
       {/* CASE STUDIES SECTION */}
-      <section id="work" className="px-6 py-20 bg-[#785042]  text-white">
+      <section className="px-6 py-20 bg-[#785042]  text-white">
         <div className="max-w-5xl mx-auto">
           <h3 className="text-3xl font-bold mb-12 text-center">
             Work Experience
@@ -181,6 +187,40 @@ function App() {
                   </ul>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO / CONTENT SHOWCASE */}
+      <section id="work" className="px-6 py-20 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold mb-12 text-center">
+            Content I've Created
+          </h3>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {portfolio.map((item) => (
+              <a
+                key={item.id}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block overflow-hidden rounded-xl shadow hover:shadow-xl transition"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-60 object-cover group-hover:scale-110 transition duration-300"
+                />
+
+                {/* overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                  <p className="text-white font-semibold text-center px-4">
+                    View Post
+                  </p>
+                </div>
+              </a>
             ))}
           </div>
         </div>
@@ -232,7 +272,7 @@ function App() {
                   <img
                     src={test.image}
                     alt={test.author}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-gray-100"
+                    className="w-14 h-14 rounded-full object-contain border-2 border-gray-100"
                   />
                   <div>
                     <h4 className="font-bold text-gray-900">{test.author}</h4>
