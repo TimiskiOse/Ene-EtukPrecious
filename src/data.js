@@ -1,5 +1,6 @@
 import mrAkpos from "./assets/mrApkos.jpeg";
-import drLavy from "./assets/drLavy.jpeg";
+//import drLavy from "./assets/drLavy.jpeg";
+import drLavy1 from "./assets/drLavy1.jpeg";
 import work1 from "./assets/work1.jpeg";
 import work2 from "./assets/work2.jpeg";
 import work3 from "./assets/work3.jpeg";
@@ -83,7 +84,7 @@ export const testimonials = [
     quote: "Precious!!! Thank you for being a part of The DREAM TEAM. You make my life easy, you have a sweet spirit and joy to work with.  We will do great things together.",
     author: "Dr. Lavonya Shinelle", 
     role: "Organizational Leadership Psychologist", 
-    image: drLavy
+    image: drLavy1
   },
   {
     id: 2,

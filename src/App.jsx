@@ -272,7 +272,7 @@ function App() {
                   <img
                     src={test.image}
                     alt={test.author}
-                    className="w-14 h-14 rounded-full object-contain border-2 border-gray-100"
+                    className="w-16 h-16 rounded-full object-cover  border-2 border-gray-100"
                   />
                   <div>
                     <h4 className="font-bold text-gray-900">{test.author}</h4>
